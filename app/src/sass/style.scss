@@ -1,5 +1,7 @@
 $y: 0.5em;
 $x: 0.5em;
+$line-height: 1.4;
+
 @mixin clearfix() {
     &:after {
         content: "";
@@ -7,11 +9,28 @@ $x: 0.5em;
         display: block;
     }
 }
+@mixin today(){
+        color: #FFF;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: $line-height + 1em;
+            width: $line-height + 1em;
+            background-color: #212121;
+            border-radius: 50%;
+            z-index: -1;
+        }
+}
+
+.today {
+    @include today();
+}
 
 * {
     margin: 0;
     padding: 0;
-    line-height: 1.4;
+    line-height: $line-height;
     text-decoration: none;
     font-family: sans-serif;
 }
@@ -21,22 +40,32 @@ table {
     border-spacing: 0;
 }
 
+thead {
+    background-color: #B2DFDB;
+}
+
 .calendar {
     max-width: 400px;
     margin: 3em auto;
     text-align: center;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-// .calendar-header {
-//     @include clearfix;
-// }
+.calendar-header {
+    // @include clearfix;
+    background-color: #009688;
+    color: #FFF;
+}
 .calendar-header-title,
 .calendar-footer {
     padding: $y 0;
 }
-
+.calendar-footer {
+    background-color: #8BC34A;
+    color: #FFF;
+}
 .calendar-controls__left {
     float: left;
     padding: $y ($x * 3);

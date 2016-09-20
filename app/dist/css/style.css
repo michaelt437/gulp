@@ -1,3 +1,15 @@
+.today {
+  color: #FFF; }
+  .today:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2.4em;
+    width: 2.4em;
+    background-color: #212121;
+    border-radius: 50%;
+    z-index: -1; }
+
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +21,28 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+thead {
+  background-color: #B2DFDB; }
+
 .calendar {
   max-width: 400px;
   margin: 3em auto;
   text-align: center;
-  border: 1px solid #000;
-  border-radius: 5px; }
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  overflow: hidden; }
+
+.calendar-header {
+  background-color: #009688;
+  color: #FFF; }
 
 .calendar-header-title,
 .calendar-footer {
   padding: 0.5em 0; }
+
+.calendar-footer {
+  background-color: #8BC34A;
+  color: #FFF; }
 
 .calendar-controls__left {
   float: left;
