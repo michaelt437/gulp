@@ -29,10 +29,6 @@ thead {
 .calendar-header {
   background-color: #009688;
   color: #FFF; }
-  .calendar-header:after {
-    content: "";
-    clear: both;
-    display: block; }
 
 .calendar-header-title,
 .calendar-footer {
@@ -61,7 +57,7 @@ thead {
   padding: 1.125em 0.5em; }
 
 .calendar-table tbody td:not(.today):hover {
-  box-shadow: inset 0px -2px 0px #BDBDBD; }
+  box-shadow: inset 10px 30px 30px #BDBDBD; }
 
 .calendar-table tbody td:not(.today):active {
   box-shadow: inset 0 -2px 0px #8BC34A; }

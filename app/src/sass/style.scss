@@ -73,7 +73,7 @@ thead {
 }
 
 .calendar-header {
-    @include clearfix;
+    // @include clearfix;
     background-color: $primary;
     color: #FFF;
 }
@@ -113,7 +113,8 @@ thead {
             padding: ($y * 2.25) $x;
         }
         td:not(.today):hover {
-            box-shadow: inset 0px -2px 0px #BDBDBD;
+            // box-shadow: inset 0px -2px 0px #BDBDBD;
+            box-shadow: inset 10px 30px 30px #BDBDBD;
         }
         td:not(.today):active {
             box-shadow: inset 0 -2px 0px #8BC34A;
