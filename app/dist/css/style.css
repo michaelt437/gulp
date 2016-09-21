@@ -1,21 +1,15 @@
-.today {
-  color: #FFF; }
-  .today:before {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 2.4em;
-    width: 2.4em;
-    background-color: #212121;
-    border-radius: 50%;
-    z-index: -1; }
-
 * {
   margin: 0;
   padding: 0;
   line-height: 1.4;
   text-decoration: none;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  font-size: inherit;
+  box-sizing: border-box; }
+
+.today {
+  color: #8BC34A;
+  box-shadow: inset 0 -2px 0px #8BC34A; }
 
 table {
   border-collapse: collapse;
@@ -35,6 +29,10 @@ thead {
 .calendar-header {
   background-color: #009688;
   color: #FFF; }
+  .calendar-header:after {
+    content: "";
+    clear: both;
+    display: block; }
 
 .calendar-header-title,
 .calendar-footer {
@@ -44,21 +42,29 @@ thead {
   background-color: #8BC34A;
   color: #FFF; }
 
-.calendar-controls__left {
-  float: left;
+.calendar-controls {
   padding: 0.5em 1.5em; }
+  .calendar-controls:hover {
+    background-color: #00877a; }
+
+.calendar-controls__left {
+  float: left; }
 
 .calendar-controls__right {
-  float: right;
-  padding: 0.5em 1.5em; }
+  float: right; }
 
 .calendar-table th,
 .calendar-table td {
   padding: 0.5em 0.5em; }
 
-.calendar-table tbody th,
 .calendar-table tbody td {
-  padding: 1em 0.5em; }
+  padding: 1.125em 0.5em; }
+
+.calendar-table tbody td:not(.today):hover {
+  box-shadow: inset 0px -2px 0px #BDBDBD; }
+
+.calendar-table tbody td:not(.today):active {
+  box-shadow: inset 0 -2px 0px #8BC34A; }
 
 .calendar-table {
   width: 100%; }

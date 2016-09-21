@@ -1,6 +1,11 @@
 $y: 0.5em;
 $x: 0.5em;
 $line-height: 1.4;
+$size: ($line-height + ($y * 2));
+$primary: #009688;
+@function darker($color) {
+    @return mix(#000, $color, 10%);
+}
 
 @mixin clearfix() {
     &:after {
@@ -9,22 +14,30 @@ $line-height: 1.4;
         display: block;
     }
 }
-@mixin today(){
-        color: #FFF;
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            height: $line-height + 1em;
-            width: $line-height + 1em;
-            background-color: #212121;
-            border-radius: 50%;
-            z-index: -1;
-        }
-}
 
-.today {
-    @include today();
+// @mixin today() {
+//     color: #FFF;
+//     &:before {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         height: $size;
+//         width: $size;
+//         margin-top: $size / -4;
+//         margin-left: $size / -100;
+//         background-color: #212121;
+//         border-radius: 50%;
+//         z-index: -1;
+//     }
+// }
+// @mixin today() {
+//     color: #FFF;
+//     border-radius: 50%;
+//     background-color: #212121;
+// }
+@mixin today() {
+    color: #8BC34A;
+    box-shadow: inset 0 -2px 0px #8BC34A;
 }
 
 * {
@@ -33,6 +46,12 @@ $line-height: 1.4;
     line-height: $line-height;
     text-decoration: none;
     font-family: sans-serif;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+
+.today {
+    @include today();
 }
 
 table {
@@ -54,26 +73,34 @@ thead {
 }
 
 .calendar-header {
-    // @include clearfix;
-    background-color: #009688;
+    @include clearfix;
+    background-color: $primary;
     color: #FFF;
 }
+
 .calendar-header-title,
 .calendar-footer {
     padding: $y 0;
 }
+
 .calendar-footer {
     background-color: #8BC34A;
     color: #FFF;
 }
+
+.calendar-controls {
+    padding: $y ($x * 3);
+    &:hover {
+        background-color: darker($primary);
+    }
+}
+
 .calendar-controls__left {
     float: left;
-    padding: $y ($x * 3);
 }
 
 .calendar-controls__right {
     float: right;
-    padding: $y ($x * 3);
 }
 
 .calendar-table {
@@ -82,9 +109,14 @@ thead {
         padding: $y $x;
     }
     tbody {
-        th,
         td {
-            padding: ($y * 2) $x;
+            padding: ($y * 2.25) $x;
+        }
+        td:not(.today):hover {
+            box-shadow: inset 0px -2px 0px #BDBDBD;
+        }
+        td:not(.today):active {
+            box-shadow: inset 0 -2px 0px #8BC34A;
         }
     }
 }
