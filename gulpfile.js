@@ -10,6 +10,7 @@ gulp.task("default",
     gulp.series(
         html,
         styles,
+        scripts,
         gulp.parallel(serve, watch)
     )
 );
@@ -27,6 +28,12 @@ function styles() {
         .pipe(browserSync.stream())
 }
 
+function scripts() {
+    return gulp.src("./app/src/js/**/*.js")
+        .pipe(gulp.dest("./app/dist/js"))
+        .pipe(browserSync.stream())
+}
+
 function serve() {
     browserSync.init({
         server: "./app/dist/"
@@ -36,4 +43,6 @@ function serve() {
 function watch() {
     gulp.watch("./app/src/**/*.html", html);
     gulp.watch("./app/src/sass/**/*.scss", styles);
+    gulp.watch("./app/src/js/**/*.js", scripts);
+
 }
