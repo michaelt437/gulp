@@ -1,30 +1,28 @@
-/*
- *  ANIMATIONS!!
- *
- *  grow
- *  bg-fill
- *  run
- *  splat
- *  spin
- *
- *
- *
- */
 * {
   margin: 0;
   padding: 0;
-  line-height: 1.4;
+  line-height: 1.618;
   text-decoration: none;
   font-family: sans-serif;
   font-size: inherit;
-  color: inherit;
-  box-sizing: border-box;
-  user-select: none; }
+  color: inherit; }
+
+*:before, *:after {
+  box-sizing: border-box; }
 
 .today {
-  font-weight: bold;
-  color: #85b000;
-  box-shadow: inset 0 -2px 0px #85b000; }
+  color: #FFF; }
+  .today:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2.618em;
+    width: 2.618em;
+    margin-top: -0.6545em;
+    margin-left: -0.02618em;
+    background-color: #212121;
+    border-radius: 50%;
+    z-index: -1; }
 
 .date {
   color: red; }
@@ -47,6 +45,10 @@ thead {
 .calendar-header {
   background-color: #009688;
   color: #FFF; }
+  .calendar-header:after {
+    content: "";
+    clear: both;
+    display: block; }
 
 .calendar-header-title,
 .calendar-footer {
@@ -68,15 +70,19 @@ thead {
 .calendar-controls__right {
   float: right; }
 
+.num {
+  display: block; }
+
 .calendar-table th,
 .calendar-table td {
-  padding: 0.5em 0.5em; }
+  padding: 0.5em 0.5em;
+  overflow: hidden; }
 
 .calendar-table tbody td {
   padding: 1.125em 0.5em;
   cursor: pointer; }
 
-.calendar-table tbody td:hover {
+.calendar-table tbody td:hover .num {
   -webkit-animation: animation 865ms linear both;
   animation: animation 865ms linear both;
   /* Generated with Bounce.js. Edit at https://goo.gl/et2XBk */ }
