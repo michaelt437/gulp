@@ -11,11 +11,13 @@ $size: ($line-height + ($y * 2));
 // Colors
 //
 
-$primary: #009688;
+// $primary: #009688;
+$primary: #DB4C05;
 // $primary: #FF0043;
 // $primary: #006AFF;
 // $primary: #7C9AC4;
 $secondary: lighten(adjust-hue($primary, 260deg), 5%);
+// $secondary: lighten(adjust-hue($primary, 260deg), 5%);
 $accent: desaturate(lighten($primary, 50%), 50%);
 
 //
@@ -158,4 +160,15 @@ thead {
 
 .calendar-table {
     width: 100%;
+}
+
+.calendar-body {
+    // background: #FFF url('http://cdn.dlron.us/assets/misc/12641/620373.jpg') no-repeat fixed 50% / cover;
+    background-size: 100% 100%;
+    animation: zoom 15s linear infinite;
+}
+
+@keyframes zoom {
+    from { background-size: 100% 100%; }
+    to { background-size: 200% 200%; }
 }

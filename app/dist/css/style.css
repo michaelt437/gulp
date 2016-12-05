@@ -32,7 +32,7 @@ table {
   border-spacing: 0; }
 
 thead {
-  background-color: #b0e5e0; }
+  background-color: #f7ede8; }
 
 .calendar {
   max-width: 400px;
@@ -43,7 +43,7 @@ thead {
   overflow: hidden; }
 
 .calendar-header {
-  background-color: #009688;
+  background-color: #DB4C05;
   color: #FFF; }
   .calendar-header:after {
     content: "";
@@ -55,14 +55,14 @@ thead {
   padding: 0.5em 0; }
 
 .calendar-footer {
-  background-color: #85b000;
+  background-color: #a406f4;
   color: #FFF;
   margin-top: 0.5em; }
 
 .calendar-controls {
   padding: 0.5em 1.5em; }
   .calendar-controls:hover {
-    background-color: #00877a; }
+    background-color: #c54405; }
 
 .calendar-controls__left {
   float: left; }
@@ -291,3 +291,13 @@ thead {
 
 .calendar-table {
   width: 100%; }
+
+.calendar-body {
+  background-size: 100% 100%;
+  animation: zoom 15s linear infinite; }
+
+@keyframes zoom {
+  from {
+    background-size: 100% 100%; }
+  to {
+    background-size: 200% 200%; } }
